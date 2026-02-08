@@ -24,19 +24,25 @@ usage() {
   echo "  -r <rate>    Rate limit (default: 300k)"
   echo "  -a <agent>   Custom User-Agent"
   echo "  -h           Show this help"
-  exit 0
+  echo "  -x           Exit (code 0)"
 }
+usage
+
+
+
+
 
 # ==============================
 # ARGUMENT PARSING
 # ==============================
-while getopts "o:w:r:a:h" opt; do
+while getopts "o:w:r:a:h:x" opt; do
   case $opt in
     o) OUTPUT_DIR="$OPTARG" ;;
     w) WAIT_TIME="$OPTARG" ;;
     r) RATE_LIMIT="$OPTARG" ;;
     a) USER_AGENT="$OPTARG" ;;
     h) usage ;;
+    x) exit 0
   esac
 done
 
@@ -81,7 +87,6 @@ wget \
   --wait="$WAIT_TIME" \
   --limit-rate="$RATE_LIMIT" \
   --user-agent="$USER_AGENT" \
-  --robots=off \
   --directory-prefix="$OUTPUT_DIR" \
   "$TARGET_URL" \
   -o "$LOG_FILE"
