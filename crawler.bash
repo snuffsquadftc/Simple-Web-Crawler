@@ -14,6 +14,7 @@ LOG_FILE="mirror.log"
 # ==============================
 # HELP
 # ==============================
+echo "WormBot 1.0.0"
 usage() {
   echo "Usage: site-backup [OPTIONS] <url>"
   echo
