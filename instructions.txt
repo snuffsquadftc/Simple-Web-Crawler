@@ -1,0 +1,20 @@
+Run in terminal or use this website for browser testing:
+https://www.onlinegdb.com/online_bash_shell
+
+Specifics:
+
+Linux:
+Ensure script has permissions
+chmod +x crawler.sh
+Execute
+./crawler.sh
+
+Windows:
+Execute
+bash windows/path/to/crawler.sh
+
+Mac:
+Check permissions
+chmod +x crawler.sh
+Execute:
+./path/to/crawler.sh
